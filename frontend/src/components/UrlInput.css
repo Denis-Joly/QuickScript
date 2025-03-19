@@ -1,0 +1,60 @@
+.url-input-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.url-input-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-group label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.input-group input {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.25);
+}
+
+.input-group input:disabled {
+  background-color: var(--background-color);
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: var(--danger-color);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.supported-sites {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  align-self: center;
+  padding: 12px 30px;
+  font-weight: 500;
+  font-size: 1.1rem;
+}

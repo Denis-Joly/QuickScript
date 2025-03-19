@@ -1,0 +1,30 @@
+[package]
+name = "quickscript"
+version = "1.0.0"
+description = "QuickScript - Convert audio/video to structured markdown"
+authors = ["developer@example.com"]
+license = "MIT"
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.2", features = [] }
+
+[dependencies]
+tauri = { version = "1.2", features = ["dialog-all", "fs-all", "http-all", "notification-all", "path-all", "process-exit", "process-relaunch", "shell-open"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+reqwest = { version = "0.11", features = ["json", "stream", "multipart"] }
+tokio = { version = "1.25", features = ["full"] }
+futures-util = "0.3"
+anyhow = "1.0"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"

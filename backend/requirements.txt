@@ -1,0 +1,35 @@
+# API Framework
+fastapi>=0.95.0
+uvicorn>=0.21.1
+pydantic>=1.10.7
+pydantic-settings>=2.0.0
+python-multipart>=0.0.6
+aiofiles>=23.1.0
+
+# Audio/Video Processing
+ffmpeg-python>=0.2.0
+yt-dlp>=2023.3.4
+
+# Speech-to-Text (installed directly from GitHub)
+# Install with: pip install git+https://github.com/openai/whisper.git
+
+# ML and summarization
+torch>=2.0.0
+transformers>=4.27.4
+
+# Utility
+markdown>=3.4.0
+pdfkit>=1.0.0
+
+# Testing
+pytest>=7.3.1
+httpx>=0.24.0
+
+# Additional to start running the backend server
+aiohttp>=3.8.0
+python-magic>=0.4.27
+weasyprint>=60.0  # Alternative to wkhtmltopdf/pdfkit
+
+# System requirements:
+# - FFmpeg must be installed on your system (use Homebrew on macOS: brew install ffmpeg)
+# - For PDF generation, wkhtmltopdf may be needed: brew install wkhtmltopdf

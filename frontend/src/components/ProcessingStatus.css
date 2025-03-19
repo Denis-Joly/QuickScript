@@ -1,0 +1,66 @@
+.processing-status-container {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-light);
+  border: 1px solid var(--border-color);
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.status-header h3 {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.cancel-button {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  font-size: 0.9rem;
+  padding: 5px 10px;
+}
+
+.cancel-button:hover:not(:disabled) {
+  background-color: darken(var(--danger-color), 10%);
+  border-color: darken(var(--danger-color), 10%);
+}
+
+.status-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.status-message {
+  font-weight: 500;
+}
+
+.status-message .error {
+  color: var(--danger-color);
+}
+
+.progress-container {
+  height: 10px;
+  background-color: var(--border-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  transition: width 0.2s ease;
+}
+
+.progress-value {
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}

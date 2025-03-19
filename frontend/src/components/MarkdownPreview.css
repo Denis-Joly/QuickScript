@@ -1,0 +1,41 @@
+.markdown-preview-container {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.markdown-preview-container.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  background-color: var(--background-color);
+  color: var(--text-light);
+}
+
+.preview-header {
+  background-color: var(--primary-light);
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.view-mode-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.view-mode-toggle button {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.view-mode-toggle button.active {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}

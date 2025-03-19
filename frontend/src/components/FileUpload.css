@@ -1,0 +1,233 @@
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.drop-area {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: var(--background-color);
+}
+
+.drop-area:hover:not(.disabled) {
+  border-color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.drop-area.dragging {
+  border-color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.drop-area.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.drop-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.drop-content svg {
+  color: var(--primary-color);
+}
+
+.drop-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.file-types {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.upload-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.upload-button {
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+# File: frontend/src/components/UrlInput.css
+.url-input-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.url-input-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-group label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.input-group input {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.25);
+}
+
+.input-group input:disabled {
+  background-color: var(--background-color);
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: var(--danger-color);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.supported-sites {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  align-self: center;
+  padding: 12px 30px;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+# File: frontend/src/components/ProcessingStatus.css
+.processing-status-container {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-light);
+  border: 1px solid var(--border-color);
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.status-header h3 {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.cancel-button {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  font-size: 0.9rem;
+  padding: 5px 10px;
+}
+
+.cancel-button:hover:not(:disabled) {
+  background-color: darken(var(--danger-color), 10%);
+  border-color: darken(var(--danger-color), 10%);
+}
+
+.status-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.status-message {
+  font-weight: 500;
+}
+
+.status-message .error {
+  color: var(--danger-color);
+}
+
+.progress-container {
+  height: 10px;
+  background-color: var(--border-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  transition: width 0.2s ease;
+}
+
+.progress-value {
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+# File: frontend/src/components/MarkdownPreview.css
+.markdown-preview-container {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.markdown-preview-container.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  background-color: var(--background-color);
+  color: var(--text-light);
+}
+
+.preview-header {
+  background-color: var(--primary-light);
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.view-mode-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.view-mode-toggle button {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.view-mode-toggle button.active {
+  background-color: var(--primary-color
