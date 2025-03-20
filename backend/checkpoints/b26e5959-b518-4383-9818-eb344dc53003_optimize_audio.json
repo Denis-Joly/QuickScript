@@ -1,0 +1,10 @@
+{
+  "job_id": "b26e5959-b518-4383-9818-eb344dc53003",
+  "file_path": "temp/3c86a75f-ff9e-4603-a6f3-d8df721fd5e2_15 Desperate Times.mp3",
+  "file_hash": "1a9678215576f50282da6ce89d000dd0",
+  "stage": "optimize_audio",
+  "timestamp": "2025-03-20T12:44:09.640376",
+  "data": {
+    "audio_path": "temp/3c86a75f-ff9e-4603-a6f3-d8df721fd5e2_15 Desperate Times_optimized.wav"
+  }
+}

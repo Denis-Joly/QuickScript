@@ -1,0 +1,10 @@
+{
+  "job_id": "52de1427-c33c-44ac-9deb-47618fdbd1fc",
+  "file_path": "temp/285aa4e5-f708-43e1-bd2b-0b2d5cd04258_05 Meandering Through the Cold War.mp3",
+  "file_hash": "8b9873c7feb14d047005e4a9507d9f7d",
+  "stage": "optimize_audio",
+  "timestamp": "2025-03-20T12:48:20.186736",
+  "data": {
+    "audio_path": "temp/285aa4e5-f708-43e1-bd2b-0b2d5cd04258_05 Meandering Through the Cold War_optimized.wav"
+  }
+}

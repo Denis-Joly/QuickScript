@@ -12,6 +12,7 @@ from typing import Optional, List
 
 from app.services.media_service import MediaService
 from app.services.transcription_service import TranscriptionService
+from app.services.whisper_cpp_service import WhisperCppService
 from app.services.summarization_service import SummarizationService
 from app.services.export_service import ExportService
 from app.services.checkpoint_service import CheckpointService
@@ -45,7 +46,7 @@ app.add_middleware(
 
 # Initialize services
 media_service = MediaService()
-transcription_service = TranscriptionService()
+transcription_service = WhisperCppService()  # TranscriptionService()
 summarization_service = SummarizationService()
 export_service = ExportService()
 temp_storage = TempStorage()

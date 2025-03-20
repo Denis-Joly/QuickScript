@@ -185,10 +185,16 @@ class TranscriptionService:
             # Create temp directory for chunks
             temp_dir = tempfile.mkdtemp(prefix="audio_chunks_")
 
-            # Get audio duration using ffprobe
-            duration_cmd = f"ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 {audio_path}"
-            process = await asyncio.create_subprocess_shell(
-                duration_cmd,
+            # Get audio duration using ffprobe - properly quote the file path
+            process = await asyncio.create_subprocess_exec(
+                "ffprobe",
+                "-v",
+                "error",
+                "-show_entries",
+                "format=duration",
+                "-of",
+                "default=noprint_wrappers=1:nokey=1",
+                audio_path,
                 stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE,
             )
@@ -211,20 +217,31 @@ class TranscriptionService:
                 start_time = i * chunk_seconds
                 chunk_path = os.path.join(temp_dir, f"chunk_{i:03d}.wav")
 
-                # Use ffmpeg to extract chunk
-                cmd = (
-                    f"ffmpeg -y -i {audio_path} -ss {start_time} -t {chunk_seconds} "
-                    f"-c:a pcm_s16le -ar 16000 -ac 1 {chunk_path}"
-                )
-
-                process = await asyncio.create_subprocess_shell(
-                    cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+                # Use ffmpeg to extract chunk - use subprocess_exec instead of shell
+                process = await asyncio.create_subprocess_exec(
+                    "ffmpeg",
+                    "-y",
+                    "-i",
+                    audio_path,
+                    "-ss",
+                    str(start_time),
+                    "-t",
+                    str(chunk_seconds),
+                    "-c:a",
+                    "pcm_s16le",
+                    "-ar",
+                    "16000",
+                    "-ac",
+                    "1",
+                    chunk_path,
+                    stdout=asyncio.subprocess.PIPE,
+                    stderr=asyncio.subprocess.PIPE,
                 )
 
                 stdout, stderr = await process.communicate()
 
                 if process.returncode != 0:
-                    logger.error(f"Failed to create chunk {i}: {stderr.decode()}")
+                    logger.error("Failed to create chunk %d: %s", i, stderr.decode())
                     continue
 
                 if os.path.exists(chunk_path):
@@ -233,8 +250,8 @@ class TranscriptionService:
             return chunk_paths
 
         except Exception as e:
-            logger.error(f"Error splitting audio: {str(e)}")
-            raise ApplicationError(f"Failed to split audio: {str(e)}")
+            logger.error("Error splitting audio: %s", str(e))
+            raise ApplicationError(f"Failed to split audio: {str(e)}") from e
 
     def _format_transcription(self, segments, info) -> dict:
         """Format Faster-Whisper output to our expected format."""

@@ -1,0 +1,10 @@
+{
+  "job_id": "487b72b6-3f88-41c5-9f12-f8cdd32acdd8",
+  "file_path": "temp/2b2f9efc-b373-4b01-8a87-8716827c02a5_John Danaher - Go Further Faster - Gi Fundamentals - Escapes Vol 4.mp4",
+  "file_hash": "f5d7327c58882a971c267be9360783b4",
+  "stage": "extract_audio",
+  "timestamp": "2025-03-19T22:40:49.119294",
+  "data": {
+    "audio_path": "temp/2b2f9efc-b373-4b01-8a87-8716827c02a5_John Danaher - Go Further Faster - Gi Fundamentals - Escapes Vol 4.wav"
+  }
+}

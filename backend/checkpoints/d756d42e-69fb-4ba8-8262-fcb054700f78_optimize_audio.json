@@ -1,0 +1,10 @@
+{
+  "job_id": "d756d42e-69fb-4ba8-8262-fcb054700f78",
+  "file_path": "temp/34119012-30ef-4b85-9dc6-90755eba4ae8_04 Romancing the Tribes.mp3",
+  "file_hash": "c77df9f58c6cdbecfe8bf5725e4a2811",
+  "stage": "optimize_audio",
+  "timestamp": "2025-03-20T12:34:28.124175",
+  "data": {
+    "audio_path": "temp/34119012-30ef-4b85-9dc6-90755eba4ae8_04 Romancing the Tribes_optimized.wav"
+  }
+}
